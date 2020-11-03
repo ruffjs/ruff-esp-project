@@ -1,0 +1,25 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "author": "{{author}}",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && webpack --config webpack.config.js",
+    "dist": "node tools/deploy.js -s",
+    "clean": "rm -fr build/* && rm -fr dist/*",
+    "flash": "node tools/deploy.js -f",
+    "run": "npm run build && npm run dist && node tools/deploy.js -f"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "commander": "^6.1.0",
+    "webpack": "^4.12.2",
+    "webpack-cli": "^3.0.8"
+  }
+}
